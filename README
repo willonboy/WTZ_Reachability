@@ -1,7 +1,7 @@
 
 USE DEMO:
 
-First start the defautl network monitor:
+First start the default network monitor:
 
 [Reachability startDefaultMonitor];
 
