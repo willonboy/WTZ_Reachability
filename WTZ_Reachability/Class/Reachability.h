@@ -1,0 +1,186 @@
+/*
+ 
+ File: Reachability.h
+ Abstract: Basic demonstration of how to use the SystemConfiguration Reachablity APIs.
+ 
+ Version: 2.2
+ 
+ Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Inc.
+ ("Apple") in consideration of your agreement to the following terms, and your
+ use, installation, modification or redistribution of this Apple software
+ constitutes acceptance of these terms.  If you do not agree with these terms,
+ please do not use, install, modify or redistribute this Apple software.
+ 
+ In consideration of your agreement to abide by the following terms, and subject
+ to these terms, Apple grants you a personal, non-exclusive license, under
+ Apple's copyrights in this original Apple software (the "Apple Software"), to
+ use, reproduce, modify and redistribute the Apple Software, with or without
+ modifications, in source and/or binary forms; provided that if you redistribute
+ the Apple Software in its entirety and without modifications, you must retain
+ this notice and the following text and disclaimers in all such redistributions
+ of the Apple Software.
+ Neither the name, trademarks, service marks or logos of Apple Inc. may be used
+ to endorse or promote products derived from the Apple Software without specific
+ prior written permission from Apple.  Except as expressly stated in this notice,
+ no other rights or licenses, express or implied, are granted by Apple herein,
+ including but not limited to any patent rights that may be infringed by your
+ derivative works or by other works in which the Apple Software may be
+ incorporated.
+ 
+ The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
+ WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
+ WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
+ COMBINATION WITH YOUR PRODUCTS.
+ 
+ IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
+ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR
+ DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF
+ CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF
+ APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
+ Copyright (C) 2010 Apple Inc. All Rights Reserved.
+ 
+*/
+
+
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+
+
+typedef enum {
+	NotReachable = 0,
+	ReachableViaWiFi,
+	ReachableViaWWAN
+} NetworkStatus;
+#define kReachabilityChangedNotification @"kNetworkReachabilityChangedNotification"
+
+
+
+
+/*****************************************************by willonboy*******************************************************/
+
+typedef void (^ returnStatusCallbackBlock)(NetworkStatus status);
+typedef void (^ noReturnCallbackBlock)(void);
+
+
+@interface ReachabilityObserverEntity : NSObject
+{
+    Class   _observerOriginalClass;
+}
+@property(nonatomic, assign) id    obserser;
+@property(nonatomic, assign) SEL   callback;
+@property(nonatomic, assign) SEL   noNetworkCallback;
+@property(nonatomic, assign) SEL   wifiCallback;
+@property(nonatomic, assign) SEL   wwanCallback;
+@property(nonatomic, assign) SEL   haveNetworkCallback;
+@property(nonatomic, assign) BOOL  isIgnoreWWAN;
+@property(nonatomic, assign) returnStatusCallbackBlock callbackBlock;
+@property(nonatomic, assign) noReturnCallbackBlock     noNetworkCallbackBlock;
+@property(nonatomic, assign) noReturnCallbackBlock     wifiCallbackBlock;
+@property(nonatomic, assign) noReturnCallbackBlock     wwanCallbackBlock;
+@property(nonatomic, assign) returnStatusCallbackBlock     haveNetworkCallbackBlock;
+
+- (BOOL)isCanSendMsgToObserver;
+
+- (void)sendMsgToObserver:(NetworkStatus) status;
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+@interface Reachability: NSObject
+{
+	BOOL localWiFiRef;
+	SCNetworkReachabilityRef reachabilityRef;
+}
+
+//reachabilityWithHostName- Use to check the reachability of a particular host name. 
++ (Reachability*) reachabilityWithHostName: (NSString*) hostName;
+
+//reachabilityWithAddress- Use to check the reachability of a particular IP address. 
++ (Reachability*) reachabilityWithAddress: (const struct sockaddr_in*) hostAddress;
+
+//reachabilityForInternetConnection- checks whether the default route is available.  
+//  Should be used by applications that do not connect to a particular host
++ (Reachability*) reachabilityForInternetConnection;
+
+//reachabilityForLocalWiFi- checks whether a local wifi connection is available.
++ (Reachability*) reachabilityForLocalWiFi;
+
+//Start listening for reachability notifications on the current run loop
+- (BOOL) startNotifier;
+- (void) stopNotifier;
+
+- (NetworkStatus) currentReachabilityStatus;
+//WWAN may be available, but not active until a connection has been established.
+//WiFi may require a connection for VPN on Demand.
+- (BOOL) connectionRequired;
+
+
+
+
+
+
+
+
+
+
+/*****************************************************by willonboy*******************************************************/
+
+
+    //by willonboy 在main线程中启动一个默认的监测网络变化Reachability实例
++ (void)startDefaultMonitor;
+
++ (NetworkStatus)currentNetworkStatus;
+
++ (void)destroyShareInstance;
+
+
+#pragma mark -
+#pragma mark - SEL
+
+    //callback like - (void)callback:(NSNumber *)networkStatus;
++ (void)addObserver:(id)observer callback:(SEL)callback;
+
+    //noNetworkCallback and wifiCallback and wwanCallback like - (void)noNetworkCallback;
++ (void)addObserver:(id)observer noNetworkCallback:(SEL)noNetworkCallback wifiCallback:(SEL)wifikCallback wwanCallback:(SEL)wwanCallback;
+
+    //noNetworkCallback like -(void)noNetworkCallback; and haveNetworkCallback like -(void)haveNetworkCallback:(NSNumber *)networkStatus;
++ (void)addObserver:(id)observer noNetworkCallback:(SEL)noNetworkCallback haveNetworkCallback:(SEL)haveNetworkCallback isIgnoreWWAN:(BOOL)isIgnore;
+
++ (void)removeObserver:(id)observer;
+
++ (void)removeAllObserver;
+
+
+
+#pragma mark -
+#pragma mark - Block
+
++ (void)addObserver:(returnStatusCallbackBlock)callbackBlock;
+
++ (void)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock wifiCallbackBlock:(noReturnCallbackBlock)wifikBlock 
+  wwanCallbackBlock:(noReturnCallbackBlock)wwanBlock;
+
++ (void)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock haveNetworkCallbackBlock:(returnStatusCallbackBlock)haveNetworkCallbackBlock isIgnoreWWAN:(BOOL)isIgnore;
+
+
+@end
+
+
+
+
+
+
+

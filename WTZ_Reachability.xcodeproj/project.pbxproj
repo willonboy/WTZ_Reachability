@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		491A3A6615E368F2006A1ECD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491A3A6415E368F2006A1ECD /* MainViewController.m */; };
+		491A3A6715E368F2006A1ECD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491A3A6515E368F2006A1ECD /* MainViewController.xib */; };
+		491A3A6A15E36C6C006A1ECD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491A3A6915E36C6B006A1ECD /* SystemConfiguration.framework */; };
+		495AEA3B15DCFB36005A27E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495AEA3A15DCFB36005A27E8 /* UIKit.framework */; };
+		495AEA3D15DCFB36005A27E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495AEA3C15DCFB36005A27E8 /* Foundation.framework */; };
+		495AEA3F15DCFB36005A27E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495AEA3E15DCFB36005A27E8 /* CoreGraphics.framework */; };
+		495AEA4515DCFB36005A27E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 495AEA4315DCFB36005A27E8 /* InfoPlist.strings */; };
+		495AEA4715DCFB36005A27E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 495AEA4615DCFB36005A27E8 /* main.m */; };
+		495AEA4B15DCFB36005A27E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 495AEA4A15DCFB36005A27E8 /* AppDelegate.m */; };
+		495AEA5415DCFB5E005A27E8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 495AEA5315DCFB5E005A27E8 /* Reachability.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		491A3A6315E368F2006A1ECD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		491A3A6415E368F2006A1ECD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		491A3A6515E368F2006A1ECD /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		491A3A6915E36C6B006A1ECD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		495AEA3615DCFB36005A27E8 /* WTZ_Reachability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTZ_Reachability.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		495AEA3A15DCFB36005A27E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		495AEA3C15DCFB36005A27E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		495AEA3E15DCFB36005A27E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		495AEA4215DCFB36005A27E8 /* WTZ_Reachability-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WTZ_Reachability-Info.plist"; sourceTree = "<group>"; };
+		495AEA4415DCFB36005A27E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		495AEA4615DCFB36005A27E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		495AEA4815DCFB36005A27E8 /* WTZ_Reachability-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WTZ_Reachability-Prefix.pch"; sourceTree = "<group>"; };
+		495AEA4915DCFB36005A27E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		495AEA4A15DCFB36005A27E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		495AEA5215DCFB5E005A27E8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		495AEA5315DCFB5E005A27E8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		495AEA3315DCFB36005A27E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491A3A6A15E36C6C006A1ECD /* SystemConfiguration.framework in Frameworks */,
+				495AEA3B15DCFB36005A27E8 /* UIKit.framework in Frameworks */,
+				495AEA3D15DCFB36005A27E8 /* Foundation.framework in Frameworks */,
+				495AEA3F15DCFB36005A27E8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		495AEA2B15DCFB36005A27E8 = {
+			isa = PBXGroup;
+			children = (
+				495AEA4015DCFB36005A27E8 /* WTZ_Reachability */,
+				495AEA3915DCFB36005A27E8 /* Frameworks */,
+				495AEA3715DCFB36005A27E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		495AEA3715DCFB36005A27E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				495AEA3615DCFB36005A27E8 /* WTZ_Reachability.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		495AEA3915DCFB36005A27E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				491A3A6915E36C6B006A1ECD /* SystemConfiguration.framework */,
+				495AEA3A15DCFB36005A27E8 /* UIKit.framework */,
+				495AEA3C15DCFB36005A27E8 /* Foundation.framework */,
+				495AEA3E15DCFB36005A27E8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		495AEA4015DCFB36005A27E8 /* WTZ_Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				495AEA5115DCFB5E005A27E8 /* Class */,
+				495AEA4915DCFB36005A27E8 /* AppDelegate.h */,
+				495AEA4A15DCFB36005A27E8 /* AppDelegate.m */,
+				495AEA4115DCFB36005A27E8 /* Supporting Files */,
+				491A3A6315E368F2006A1ECD /* MainViewController.h */,
+				491A3A6415E368F2006A1ECD /* MainViewController.m */,
+				491A3A6515E368F2006A1ECD /* MainViewController.xib */,
+			);
+			path = WTZ_Reachability;
+			sourceTree = "<group>";
+		};
+		495AEA4115DCFB36005A27E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				495AEA4215DCFB36005A27E8 /* WTZ_Reachability-Info.plist */,
+				495AEA4315DCFB36005A27E8 /* InfoPlist.strings */,
+				495AEA4615DCFB36005A27E8 /* main.m */,
+				495AEA4815DCFB36005A27E8 /* WTZ_Reachability-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		495AEA5115DCFB5E005A27E8 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				495AEA5215DCFB5E005A27E8 /* Reachability.h */,
+				495AEA5315DCFB5E005A27E8 /* Reachability.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		495AEA3515DCFB36005A27E8 /* WTZ_Reachability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495AEA4E15DCFB36005A27E8 /* Build configuration list for PBXNativeTarget "WTZ_Reachability" */;
+			buildPhases = (
+				495AEA3215DCFB36005A27E8 /* Sources */,
+				495AEA3315DCFB36005A27E8 /* Frameworks */,
+				495AEA3415DCFB36005A27E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTZ_Reachability;
+			productName = WTZ_Reachability;
+			productReference = 495AEA3615DCFB36005A27E8 /* WTZ_Reachability.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		495AEA2D15DCFB36005A27E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = willonboy.tk;
+			};
+			buildConfigurationList = 495AEA3015DCFB36005A27E8 /* Build configuration list for PBXProject "WTZ_Reachability" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 495AEA2B15DCFB36005A27E8;
+			productRefGroup = 495AEA3715DCFB36005A27E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				495AEA3515DCFB36005A27E8 /* WTZ_Reachability */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		495AEA3415DCFB36005A27E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495AEA4515DCFB36005A27E8 /* InfoPlist.strings in Resources */,
+				491A3A6715E368F2006A1ECD /* MainViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		495AEA3215DCFB36005A27E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495AEA4715DCFB36005A27E8 /* main.m in Sources */,
+				495AEA4B15DCFB36005A27E8 /* AppDelegate.m in Sources */,
+				495AEA5415DCFB5E005A27E8 /* Reachability.m in Sources */,
+				491A3A6615E368F2006A1ECD /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		495AEA4315DCFB36005A27E8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				495AEA4415DCFB36005A27E8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		495AEA4C15DCFB36005A27E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		495AEA4D15DCFB36005A27E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		495AEA4F15DCFB36005A27E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTZ_Reachability/WTZ_Reachability-Prefix.pch";
+				INFOPLIST_FILE = "WTZ_Reachability/WTZ_Reachability-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		495AEA5015DCFB36005A27E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WTZ_Reachability/WTZ_Reachability-Prefix.pch";
+				INFOPLIST_FILE = "WTZ_Reachability/WTZ_Reachability-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		495AEA3015DCFB36005A27E8 /* Build configuration list for PBXProject "WTZ_Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495AEA4C15DCFB36005A27E8 /* Debug */,
+				495AEA4D15DCFB36005A27E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495AEA4E15DCFB36005A27E8 /* Build configuration list for PBXNativeTarget "WTZ_Reachability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495AEA4F15DCFB36005A27E8 /* Debug */,
+				495AEA5015DCFB36005A27E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 495AEA2D15DCFB36005A27E8 /* Project object */;
+}
