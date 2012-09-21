@@ -77,11 +77,11 @@ typedef void (^ noReturnCallbackBlock)(void);
 @property(nonatomic, assign) SEL   wwanCallback;
 @property(nonatomic, assign) SEL   haveNetworkCallback;
 @property(nonatomic, assign) BOOL  isIgnoreWWAN;
-@property(nonatomic, assign) returnStatusCallbackBlock callbackBlock;
-@property(nonatomic, assign) noReturnCallbackBlock     noNetworkCallbackBlock;
-@property(nonatomic, assign) noReturnCallbackBlock     wifiCallbackBlock;
-@property(nonatomic, assign) noReturnCallbackBlock     wwanCallbackBlock;
-@property(nonatomic, assign) returnStatusCallbackBlock     haveNetworkCallbackBlock;
+@property(nonatomic, copy) returnStatusCallbackBlock callbackBlock;
+@property(nonatomic, copy) noReturnCallbackBlock     noNetworkCallbackBlock;
+@property(nonatomic, copy) noReturnCallbackBlock     wifiCallbackBlock;
+@property(nonatomic, copy) noReturnCallbackBlock     wwanCallbackBlock;
+@property(nonatomic, copy) returnStatusCallbackBlock     haveNetworkCallbackBlock;
 
 - (BOOL)isCanSendMsgToObserver;
 

@@ -98,6 +98,16 @@ Class object_getClass(id object);
 @synthesize wwanCallbackBlock;
 @synthesize haveNetworkCallbackBlock;
 
+- (void)dealloc 
+{
+    Block_release(callbackBlock);
+    Block_release(noNetworkCallbackBlock);
+    Block_release(wifiCallbackBlock);
+    Block_release(wwanCallbackBlock);
+    Block_release(haveNetworkCallbackBlock);
+    [super dealloc];
+}
+
 - (void)setObserser:(id)obserser_
 {
     _observerOriginalClass = object_getClass(obserser_);
