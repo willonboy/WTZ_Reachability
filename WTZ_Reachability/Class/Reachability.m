@@ -100,11 +100,12 @@ Class object_getClass(id object);
 
 - (void)dealloc 
 {
-    Block_release(callbackBlock);
-    Block_release(noNetworkCallbackBlock);
-    Block_release(wifiCallbackBlock);
-    Block_release(wwanCallbackBlock);
-    Block_release(haveNetworkCallbackBlock);
+    [callbackBlock release];
+    [noNetworkCallbackBlock release];
+    [wifiCallbackBlock release];
+    [wwanCallbackBlock release];
+    [haveNetworkCallbackBlock release];
+    
     [super dealloc];
 }
 
