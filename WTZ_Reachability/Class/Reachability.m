@@ -258,8 +258,8 @@ Class object_getClass(id object);
 
 
 @implementation Reachability
-    //by willonboy
-static NetworkStatus status = 0;
+    //by willonboy  默认值是有网络
+static NetworkStatus status = 1;
 static Reachability *reach = nil;
 static NSMutableArray *_observerEntities = nil;
 
