@@ -131,13 +131,13 @@ Class object_getClass(id object);
         }
         else if (status != NotReachable)
         {
-            if ([obserser respondsToSelector:haveNetworkCallback] && !isIgnoreWWAN) 
-            {
-                [obserser performSelector:haveNetworkCallback withObject:[NSNumber numberWithInt:status]];
-            } 
-            else if(isIgnoreWWAN && [obserser respondsToSelector:noNetworkCallback])
+            if(isIgnoreWWAN && status == ReachableViaWWAN && [obserser respondsToSelector:noNetworkCallback] )
             {
                 [obserser performSelector:noNetworkCallback];
+            }
+            else if ([obserser respondsToSelector:haveNetworkCallback] && !isIgnoreWWAN)
+            {
+                [obserser performSelector:haveNetworkCallback withObject:[NSNumber numberWithInt:status]];
             }
             
             switch (status)
@@ -182,13 +182,13 @@ Class object_getClass(id object);
     }
     else if (status != NotReachable)
     {
-        if (haveNetworkCallbackBlock && !isIgnoreWWAN)
-        {
-            haveNetworkCallbackBlock(status);
-        }
-        else if(isIgnoreWWAN && noNetworkCallbackBlock)
+        if(isIgnoreWWAN && status == ReachableViaWWAN && noNetworkCallbackBlock)
         {
             noNetworkCallbackBlock();
+        }
+        else if (haveNetworkCallbackBlock && !isIgnoreWWAN)
+        {
+            haveNetworkCallbackBlock(status);
         }
         
         switch (status)
