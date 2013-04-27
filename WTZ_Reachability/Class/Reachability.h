@@ -168,13 +168,15 @@ typedef void (^ noReturnCallbackBlock)(void);
 #pragma mark -
 #pragma mark - Block
 
-+ (void)addObserver:(returnStatusCallbackBlock)callbackBlock;
++ (id)addObserver:(returnStatusCallbackBlock)callbackBlock;
 
-+ (void)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock wifiCallbackBlock:(noReturnCallbackBlock)wifikBlock 
++ (id)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock wifiCallbackBlock:(noReturnCallbackBlock)wifikBlock 
   wwanCallbackBlock:(noReturnCallbackBlock)wwanBlock;
 
-+ (void)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock haveNetworkCallbackBlock:(returnStatusCallbackBlock)haveNetworkCallbackBlock isIgnoreWWAN:(BOOL)isIgnore;
++ (id)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock haveNetworkCallbackBlock:(returnStatusCallbackBlock)haveNetworkCallbackBlock isIgnoreWWAN:(BOOL)isIgnore;
 
+
++ (void)removeBlockObserver:(id)blockObserver;
 
 @end
 

@@ -608,16 +608,18 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 #pragma mark -
 #pragma mark - Block
 
-+ (void)addObserver:(returnStatusCallbackBlock)callbackBlock;
+    //return value maybe need to be call retain function
++ (id)addObserver:(returnStatusCallbackBlock)callbackBlock;
 {
     ReachabilityObserverEntity *entity = [ReachabilityObserverEntity new];
     entity.callbackBlock = callbackBlock;
     [_observerEntities addObject:entity];
     
     [entity release];
+    return entity;
 }
 
-+ (void)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock wifiCallbackBlock:(noReturnCallbackBlock)wifikBlock 
++ (id)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock wifiCallbackBlock:(noReturnCallbackBlock)wifikBlock 
   wwanCallbackBlock:(noReturnCallbackBlock)wwanBlock;
 {
     ReachabilityObserverEntity *entity = [ReachabilityObserverEntity new];
@@ -627,10 +629,10 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     [_observerEntities addObject:entity];
     
     [entity release];
-
+    return entity;
 }
 
-+ (void)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock haveNetworkCallbackBlock:(returnStatusCallbackBlock)haveNetworkCallbackBlock isIgnoreWWAN:(BOOL)isIgnore;
++ (id)addObserver:(noReturnCallbackBlock)noNetworkCallbackBlock haveNetworkCallbackBlock:(returnStatusCallbackBlock)haveNetworkCallbackBlock isIgnoreWWAN:(BOOL)isIgnore;
 {
     ReachabilityObserverEntity *entity = [ReachabilityObserverEntity new];
     entity.haveNetworkCallbackBlock = haveNetworkCallbackBlock;
@@ -639,6 +641,19 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     [_observerEntities addObject:entity];
     
     [entity release];
+    return entity;
+}
+
+    //blockObserver is addObserver: function return value
++ (void)removeBlockObserver:(id)blockObserver;
+{
+    for (ReachabilityObserverEntity *entity in _observerEntities)
+    {
+        if (entity == blockObserver)
+        {
+            [_observerEntities removeObject:entity];
+        }
+    }
 }
 
 
